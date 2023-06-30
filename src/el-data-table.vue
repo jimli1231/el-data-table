@@ -31,7 +31,7 @@
             type="primary"
             :size="buttonSize"
             @click="search"
-            >查询</el-button
+            >查询1</el-button
           >
           <el-button :size="buttonSize" @click="resetSearch">重置</el-button>
         </el-form-item>
