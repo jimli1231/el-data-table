@@ -27,25 +27,40 @@
         <el-form-item>
           <!--https://github.com/ElemeFE/element/pull/5920-->
           <el-button
-            native-type="submit"
-            type="primary"
-            :size="buttonSize"
-            @click="search"
-            >查询1</el-button
-          >
-          <el-button :size="buttonSize" @click="resetSearch">重置</el-button>
-        </el-form-item>
-      </el-form-renderer>
-
-      <el-form v-if="hasHeader">
-        <el-form-item class="header-button-container">
-          <el-button
             v-if="hasNew"
+            icon="el-icon-plus"
             type="primary"
             :size="buttonSize"
             @click="onDefaultNew"
             >{{ newText }}</el-button
           >
+
+          <el-button
+            icon="el-icon-search"
+            native-type="submit"
+            type="primary"
+            :size="buttonSize"
+            @click="search"
+            >查询</el-button
+          >
+          <el-button
+            icon="el-icon-refresh"
+            :size="buttonSize"
+            @click="resetSearch"
+            >重置</el-button
+          >
+        </el-form-item>
+      </el-form-renderer>
+
+      <el-form v-if="hasHeader">
+        <el-form-item class="header-button-container">
+          <!-- <el-button
+            v-if="hasNew"
+            type="primary"
+            :size="buttonSize"
+            @click="onDefaultNew"
+            >{{ newText }}</el-button
+          > -->
           <template v-for="(btn, i) in headerButtons">
             <self-loading-button
               v-if="'show' in btn ? btn.show(selected) : true"
