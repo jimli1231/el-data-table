@@ -220,7 +220,8 @@
               :is-text="operationButtonType === 'text'"
               @click="onDefaultEdit(scope.row)"
             >
-              {{ editText }}
+              <!-- {{ editText }}123 -->
+              <i class="el-icon-edit-outline"></i>
             </self-loading-button>
             <self-loading-button
               v-if="hasView"
@@ -256,7 +257,8 @@
               :is-text="operationButtonType === 'text'"
               @click="onDefaultDelete(scope.row)"
             >
-              {{ deleteText }}
+              <!-- {{ deleteText }} -->
+              <i class="el-icon-delete"></i>
             </self-loading-button>
 
             <!--@slot 自定义操作列, 当extraButtons不满足需求时可以使用。传入 row -->
