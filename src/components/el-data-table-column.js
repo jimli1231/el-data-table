@@ -7,7 +7,7 @@ export default {
     if (props.columns) {
       children = props.columns.map(column =>
         h('el-data-table-column', {
-          props: Object.assign({}, {align}, column)
+          props: Object.assign({}, {align, showOverflowTooltip: true}, column)
         })
       )
     }

@@ -193,6 +193,8 @@
           <el-data-table-column
             v-for="col in columns"
             :key="col.prop"
+          :show-overflow-tooltip="true"
+
             v-bind="{align: columnsAlign, ...col}"
           />
         </template>
@@ -221,7 +223,9 @@
               @click="onDefaultEdit(scope.row)"
             >
               <!-- {{ editText }}123 -->
-              <i class="el-icon-edit-outline"></i>
+              <el-tooltip content="编辑">
+              <i class="el-icon-edit-outline" style="color: black;"></i>
+            </el-tooltip>
             </self-loading-button>
             <self-loading-button
               v-if="hasView"
@@ -258,7 +262,9 @@
               @click="onDefaultDelete(scope.row)"
             >
               <!-- {{ deleteText }} -->
-              <i class="el-icon-delete"></i>
+              <el-tooltip content="删除">
+              <i class="el-icon-delete" style="color: black;"></i>
+              </el-tooltip>
             </self-loading-button>
 
             <!--@slot 自定义操作列, 当extraButtons不满足需求时可以使用。传入 row -->
