@@ -26,14 +26,7 @@
         <slot name="search"></slot>
         <el-form-item>
           <!--https://github.com/ElemeFE/element/pull/5920-->
-          <el-button
-            v-if="hasNew"
-            icon="el-icon-plus"
-            type="primary"
-            :size="buttonSize"
-            @click="onDefaultNew"
-            >{{ newText }}</el-button
-          >
+        
 
           <el-button
             icon="el-icon-search"
@@ -49,7 +42,19 @@
             @click="resetSearch"
             >重置</el-button
           >
+         
         </el-form-item>
+        <el-button
+            v-if="hasNew"
+            style="float: right;
+            margin-top: 5px;
+            "
+            icon="el-icon-plus"
+            type="primary"
+            :size="buttonSize"
+            @click="onDefaultNew"
+            >{{ newText }}</el-button
+          >
       </el-form-renderer>
 
       <el-form v-if="hasHeader">
@@ -194,7 +199,8 @@
             v-for="col in columns"
             :key="col.prop"
           :show-overflow-tooltip="true"
-
+          align="center"
+          header-align="center"
             v-bind="{align: columnsAlign, ...col}"
           />
         </template>
@@ -206,6 +212,7 @@
           v-bind="{align: columnsAlign, ...operationAttrs}"
         >
           <template slot-scope="scope">
+            <slot name="operation" :row="scope.row" />
             <self-loading-button
               v-if="isTree && hasNew"
               type="primary"
@@ -268,7 +275,7 @@
             </self-loading-button>
 
             <!--@slot 自定义操作列, 当extraButtons不满足需求时可以使用。传入 row -->
-            <slot name="operation" :row="scope.row" />
+      
           </template>
         </el-data-table-column>
 
