@@ -48,6 +48,7 @@
             v-if="hasNew"
             style="float: right;
             margin-top: 5px;
+            margin-right: 10px;
             "
             icon="el-icon-plus"
             type="primary"
@@ -231,7 +232,7 @@
             >
               <!-- {{ editText }}123 -->
               <el-tooltip content="编辑">
-              <i class="el-icon-edit-outline" style="color: black;"></i>
+              <i class="el-icon-edit-outline" style="color: black;font-size: 17px;"></i>
             </el-tooltip>
             </self-loading-button>
             <self-loading-button
@@ -270,7 +271,7 @@
             >
               <!-- {{ deleteText }} -->
               <el-tooltip content="删除">
-              <i class="el-icon-delete" style="color: black;"></i>
+              <i class="el-icon-delete" style="color: black;font-size: 17px;"></i>
               </el-tooltip>
             </self-loading-button>
 

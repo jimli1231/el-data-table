@@ -1,6 +1,6 @@
 {
   "name": "@jimli1231/el-data-table",
-  "version": "1.6.0",
+  "version": "1.8.0",
   "description": "base on element-ui, makes crud easily",
   "author": "https://github.com/FEMessage",
   "license": "MIT",
@@ -27,7 +27,7 @@
   },
   "types": "src/el-data-table.d.ts",
   "scripts": {
-    "build-prepublish-publish": "npm run build && npm run prepublish && npm publish",
+    "build-prepublish-publish": "npm run build:es && npm run prepublish && npm publish",
     "prepublish": "node update-package-json.js",
     "test": "jest --verbose",
     "dev": "vue-styleguidist server",
